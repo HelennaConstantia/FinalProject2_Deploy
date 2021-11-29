@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Rain Prediction</title>
+</head>
+<body>
+    <div class="form">
+        <h1>Rain Prediction </h1>
+        <form action="{{url_for('predict')}}" method="post">
+            <input type="text" name="rainfall" placeholder="curah hujan(mm)" required="required"/>
+            <input type="text" name="wind" placeholder="Kecepatan angin (km/h)" required="required"/>
+            <input type="text" name="humidity" placeholder="Kelembaban udara(%)" required="required"/>
+            <input type="text" name="pressure" placeholder="Tekanan udara(hpa)" required="required"/>
+            <select name= "rain" placeholder="apakah hari ini hujan ?" >
+                <h3>apakah hari ini hujan ?</h3>
+                    <option value="yes">iya</option>
+                    <option value="no">tidak</option>  
+            </select>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <p class="message"><strong><h2>{{prediction_text}}</h2></strong></p>
+    </div>
+</body>
+</html>
