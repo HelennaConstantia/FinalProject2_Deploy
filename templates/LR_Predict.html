@@ -9,17 +9,18 @@
 </head>
 <body>
     <div class="form">
-        <h1>Rain Prediction </h1>
+        <legend>Rain Prediction </legend>
         <form action="{{url_for('predict')}}" method="post">
             <input type="text" name="rainfall" placeholder="curah hujan(mm)" required="required"/>
             <input type="text" name="wind" placeholder="Kecepatan angin (km/h)" required="required"/>
             <input type="text" name="humidity" placeholder="Kelembaban udara(%)" required="required"/>
             <input type="text" name="pressure" placeholder="Tekanan udara(hpa)" required="required"/>
-            <select name= "rain" placeholder="apakah hari ini hujan ?" >
+            <label>apakah hari ini hujan ?<select name= "rain" >
+                <label> <span>apakah hari ini hujan ?</span></label>
                 <h3>apakah hari ini hujan ?</h3>
                     <option value="yes">iya</option>
                     <option value="no">tidak</option>  
-            </select>
+            </label></select>
 
             <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
         </form>
